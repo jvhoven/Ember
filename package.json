@@ -4,7 +4,7 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "gulp serve"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/electron/electron-quick-start#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.8"
+    "electron-connect": "^0.4.0",
+    "electron-prebuilt": "^0.37.8",
+    "gulp": "^3.9.1"
   }
 }

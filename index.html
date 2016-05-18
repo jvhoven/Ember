@@ -3,18 +3,60 @@
     <head>
         <meta charset="UTF-8">
         <title>Hello World!</title>
+        <link href="public/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="public/css/flat-ui.min.css" rel="stylesheet">
+        <link href="public/css/vendor/codemirror/codemirror.css" rel="stylesheet">
+        <link href="theme/material.css" rel="stylesheet">
+        <link href="public/css/ember.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <h1>Hello World z!</h1>
-        <!-- All of the Node.js APIs are available in this renderer process. -->
-        We are using node <script>document.write(process.versions.node)</script>,
-        Chromium <script>document.write(process.versions.chrome)</script>,
-        and Electron <script>document.write(process.versions.electron)</script>.
+        <div class="row">
+            <div class="col-xs-12">
+                <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                            <span class="sr-only">Toggle navigation</span>
+                        </button>
+                        <a class="navbar-brand" href="#">Ember</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                        <form class="navbar-form navbar-right" action="#" role="search">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                                    <span class="input-group-btn">
+                                    <button type="submit" class="btn"><span class="fui-search"></span></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form> 
+                    </div>
+                </nav>  
+            </div>
+        </div>
+        <textarea id="ember"></textarea>
+        <script>
+            // You can also require other files to run in this process
+            require('./bootstrap.js')
+            require('electron-connect').client.create()
+            window.$ = window.jQuery = require('./public/js/vendor/jquery.min.js');
+        </script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="public/js/vendor/video.js"></script>
+        <script src="public/js/flat-ui.min.js"></script> 
+        <script src="public/js/vendor/codemirror/codemirror.js"></script>
+        <script src="mode/javascript/javascript.js"></script>   
+        <script>
+            var textArea = document.getElementById('ember');
+            var editor = CodeMirror.fromTextArea(textArea, {
+                theme: 'material',
+                mode: 'javascript',
+                matchBrackets: true,
+                lineNumbers: true,
+                setActiveLine: true,
+                indentUnit: 4
+            });
+        </script>
     </body>
-
-    <script>
-        // You can also require other files to run in this process
-        require('./bootstrap.js')
-        require('electron-connect').client.create()
-    </script>
 </html>

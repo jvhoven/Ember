@@ -12,5 +12,5 @@ gulp.task('serve',() => {
   gulp.watch('main.js', electron.restart);
 
   // Reload renderer process
-  gulp.watch(['renderer.js', 'index.html'], electron.reload);
+  gulp.watch(['bootstrap.js', 'index.html', 'public/css/ember.css'], electron.reload);
 });

@@ -6,3 +6,5 @@ class Ember {
         alert("Hello world!");
     }
 }
+
+new Ember();
